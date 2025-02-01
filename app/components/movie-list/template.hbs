@@ -1,7 +1,9 @@
 <ul class={{this.styleNamespace}}>
   {{#each @movies as |movie|}}
     <MovieList::MovieListItem @movie={{movie}} />
-
+    
+      <p>Hello from movie list</p>
     <hr />
   {{/each}}
 </ul>
+

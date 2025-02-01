@@ -21,13 +21,13 @@ module.exports = function (environment) {
   };
 
   ENV.firebase = {
-    apiKey: "AIzaSyCUXvPY3iu5WiZSybyllWeTA_QuXSNCGe0",
-    authDomain: "clarus-tech-test-74373.firebaseapp.com",
-    projectId: "clarus-tech-test-74373",
-    storageBucket: "clarus-tech-test-74373.firebasestorage.app",
-    messagingSenderId: "253067208440",
-    appId: "1:253067208440:web:349b24e12675fcd92c3d0d",
-    measurementId: "G-XREMK9YG3Z"
+    apiKey: 'AIzaSyCUXvPY3iu5WiZSybyllWeTA_QuXSNCGe0',
+    authDomain: 'clarus-tech-test-74373.firebaseapp.com',
+    projectId: 'clarus-tech-test-74373',
+    storageBucket: 'clarus-tech-test-74373.firebasestorage.app',
+    messagingSenderId: '253067208440',
+    appId: '1:253067208440:web:349b24e12675fcd92c3d0d',
+    measurementId: 'G-XREMK9YG3Z',
   };
 
   if (environment === 'test') {

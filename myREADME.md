@@ -6,11 +6,11 @@ Below are some instructions on how to set up this repository.
 
 ## Instructions
 
-### 1. Clone the repo
+### 1. Clone the Repo
 
 Fork this repo before working on it. Then in your chosen directory, clone the repo using the command: `git clone https://github.com/your-username/forked-repo-link.git`
 
-### 2. Install dependencies
+### 2. Install Dependencies
 
 Run `pnpm install -g ember-cli` to install Ember
 
@@ -18,7 +18,7 @@ Run `pnpm install firebase` to install Firebase
 
 Run `pnpm i` to install all dependencies
 
-### 3. Run the app locally
+### 3. Run the App Locally
 
 Ember provides a set of commands you can use to run the app locally.
 

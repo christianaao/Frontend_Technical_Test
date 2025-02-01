@@ -7,7 +7,7 @@ export default class WmsRoute extends Route {
   beforeModel() {
     const environment =
       getOwner(this).resolveRegistration('config:environment');
-
+      console.log('Initializing Firebase with:', environment.firebase);
     initializeApp(environment.firebase);
   }
 }
