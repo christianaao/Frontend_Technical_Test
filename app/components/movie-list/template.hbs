@@ -1,7 +1,7 @@
 <ul class={{this.styleNamespace}}>
   {{#each @movies as |movie|}}
     <MovieList::MovieListItem @movie={{movie}} />
-    <LinkTo @route="movies.movie" @model={{movie.id}}>
+    <LinkTo @route="movies.single-movie" @model={{movie.id}}>
     <button type="button">
       View Movie
     </button>

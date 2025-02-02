@@ -1,0 +1,12 @@
+{{page-title "SingleMovie"}}
+<section>
+    <h1>{{@model.title}}</h1>
+    <p>{{@model.description}}</p>
+    {{!-- <p>{{@model.rating}}</p>
+    <p>{{@model.genre}}</p>
+    <p>{{@model.release-year}}</p> --}}
+    <button {{on "click" this.editMovie}}>Edit</button>
+    <button {{on "click" this.deleteMovie}}>Edit</button>
+    {{!-- <button {{on "click" }}>All Movies</button> --}}
+</section>
+{{outlet}}
