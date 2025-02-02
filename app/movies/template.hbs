@@ -1,0 +1,7 @@
+{{page-title "Movies"}}
+<section>
+    <button {{on "click" this.goToAddMovieForm}}>Add New Movie</button>
+
+    <MovieList @movies={{this.model}} />
+</section>
+{{outlet}}
