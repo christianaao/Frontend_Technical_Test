@@ -31,7 +31,7 @@ export default class LandingPage extends Component {
     moviesSnapshot.forEach((doc) => movies.push(doc));
 
     this.movies = movies;
-    console.log("MOVIES (landing page): ", movies);
+    console.log('MOVIES (landing page): ', movies);
   }
 
   constructor(owner, args) {

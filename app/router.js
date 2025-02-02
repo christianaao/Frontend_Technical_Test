@@ -12,4 +12,5 @@ Router.map(function () {
     this.route('single-movie', { path: '/:movie_id' });
     this.route('edit', { path: '/:movie_id/edit' });
   });
+  this.route('not-found', { path: '/*path' });
 });
