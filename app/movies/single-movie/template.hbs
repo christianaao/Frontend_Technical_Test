@@ -1,12 +1,24 @@
 {{page-title "SingleMovie"}}
+
+{{!-- <div>
+  <h1>{{@model.title}}</h1>
+  <p>{{@model.description}}</p>
+
+  <button {{on "click" this.editMovie}}>Edit</button>
+  <button {{on "click" this.deleteMovie}}>Delete</button>
+</div> --}}
+
+<MoviesSingleMovieRoute @model={{this.model}} />
 <section>
-    <h1>{{@model.title}}</h1>
+    <h2>Hi</h2>
+    <h1>{{this.title}}</h1>
     <p>{{@model.description}}</p>
     {{!-- <p>{{@model.rating}}</p>
     <p>{{@model.genre}}</p>
     <p>{{@model.release-year}}</p> --}}
-    <button type="button" {{on "click" this.editMovie}}>Edit</button>
+    {{!-- <button type="button" {{on "click" this.editMovie}}>Edit</button>
     <button type="button" {{on "click" this.deleteMovie}}>Edit</button>
-    {{!-- <button {{on "click" }}>All Movies</button> --}}
+    <button {{on "click" }}>All Movies</button> --}}
 </section>
+
 {{outlet}}

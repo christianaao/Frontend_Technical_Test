@@ -26,4 +26,9 @@ export default class MoviesSingleMovieRoute extends Route {
       throw new Error('Movie not found');
     }
   }
+
+  constructor(controller, model) {
+    super(controller, model);
+    console.log('constructing page: ',controller, model);
+  }
 }
