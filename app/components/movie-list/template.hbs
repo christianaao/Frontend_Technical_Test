@@ -1,8 +1,16 @@
 <ul class={{this.styleNamespace}}>
   {{#each @movies as |movie|}}
     <MovieList::MovieListItem @movie={{movie}} />
-    
-      <p>Hello from movie list</p>
+      
+      <div class="list-button">
+        <button type="button" {{on "click" (fn @editMovie movie)}}>
+          Edit
+        </button>
+
+        <button type="button" {{on "click" (fn @deleteMovie movie)}}>
+          Delete
+        </button>
+      </div>
     <hr />
   {{/each}}
 </ul>
