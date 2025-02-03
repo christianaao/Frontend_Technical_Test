@@ -63,6 +63,14 @@ export default class LandingPage extends Component {
     }
   }
 
+  // update the field with input value
+  @action updateField(field, event) {
+    this.editMovieData = {
+      ...this.editMovieData,
+      [field]: event.target.value
+    }
+  }
+
   // when user clicks "Submit" button, movie will update with data stored in editMovieData
   @action async submitEditedMovie(event) {
     event.preventDefault()

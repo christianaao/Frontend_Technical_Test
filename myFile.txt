@@ -1,15 +1,22 @@
 WHAT TO DO
 
+Core:
 x make the movie list render properly
 x fix any other problems with the website (ongoing / as i see them)
 x add edit and delete functionality to the website
-- move addMovieForm to its own page
+- look into firestore local emulators
+- design website
+- add mobile design
+- do tests for all features - fix failing tests and add new
+- update Readme with new features / bug fixes (remove database info from readme)
+
+Additional:
+- make addMovieForm dynamically render
 - add mock data to firebase (created)
-- add extra parameters to data - genre, release-year, rating
+x add extra parameters to data - genre, release-year, rating
 - add individual routes to the website so each component has its own page (where appropriate)
 - add navbar
-- design website
-- update Readme with new features / bug fixes
+- update readme
 
 Instructions can be found app/components/landing-page/component.js
 
