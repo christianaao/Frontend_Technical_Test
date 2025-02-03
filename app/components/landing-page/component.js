@@ -29,8 +29,9 @@ export default class LandingPage extends Component {
 
   @tracked movies;
 
-  @tracked editingMovie = null
-  @tracked editFormData = {
+  @tracked editingMovie = null;
+  
+  @tracked editMovieData = {
     title: "",
     description: "",
     rating: "",
@@ -48,10 +49,12 @@ export default class LandingPage extends Component {
 
     this.movies = movies;
   }
+  
   // when user clicks "Edit" button, this function will be called and store data
-  editForm(movie) {
-    this.editForm = movie
-    this.editFormData = {
+  @action startEditMovie(movie) {
+    this.editingMovie = movie
+    
+    this.editMovieData = {
       title: movie.data().title,
       description: movie.data().description,
       rating: movie.data().rating,
@@ -60,28 +63,28 @@ export default class LandingPage extends Component {
     }
   }
 
-  // when user clicks "Submit" button, movie will update with data stored in editFormData
+  // when user clicks "Submit" button, movie will update with data stored in editMovieData
   @action async submitEditedMovie(event) {
     event.preventDefault()
-    if(!this.editForm) {return;}
-    await updateDoc(this.editForm.ref, {
-      title: this.editFormData.title,
-      description: this.editFormData.description,
-      rating: this.editFormData.rating,
-      genre: this.editFormData.genre,
-      releaseYear: this.editFormData.releaseYear
+    if(!this.editingMovie) { return; }
+    await updateDoc(this.editingMovie.ref, {
+      title: this.editMovieData.title,
+      description: this.editMovieData.description,
+      rating: this.editMovieData.rating,
+      genre: this.editMovieData.genre,
+      releaseYear: this.editMovieData.releaseYear
     });
 
     alert("Movie successfully updated.")
-    this.editForm = null
+    this.editingMovie = null
     this.loadMovies()
   }
 
   @action cancelEdit() {
-    this.editForm = null
+    this.editingMovie = null
   }
  
-  async deleteMovie(movie) {
+  @action async deleteMovie(movie) {
     if (confirm('Are you sure you want to permanently delete this movie?')) {
       await deleteDoc(movie.ref);
       alert('Movie successfully deleted.');

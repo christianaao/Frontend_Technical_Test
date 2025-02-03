@@ -1,7 +1,63 @@
 <div class={{this.styleNamespace}}>
   <MovieListHeader />
 
-  <MovieList @movies={{this.movies}} />
+  <!-- Pass actions to the MovieList component -->
+  <MovieList
+    @movies={{this.movies}} 
+    @onEdit={{this.startEditMovie}} 
+    @onDelete={{this.deleteMovie}}
+  />
 
+  <!-- Conditionally render the edit form when a movie is being edited -->
+  {{#if this.editingMovie}}
+    <section class="edit-form">
+      <h2>Edit Movie</h2>
+      <form {{on "submit" this.submitEditedMovie}}>
+        <label for="title">Title: </label>
+        <input
+          id="title"
+          type="text"
+          value={{this.editMovieData.title}}
+          {{on "input" (fn (mut this.editMovieData.title) value="target.value")}}
+        />
+
+        <label for="description">Description: </label>
+        <textarea
+          id="description"
+          {{on "input" (fn (mut this.editMovieData.description) value="target.value")}}
+        >{{this.editMovieData.description}}</textarea>
+
+        <label for="rating">Rating: </label>
+        <input
+          id="rating"
+          type="text"
+          value={{this.editMovieData.rating}}
+          {{on "input" (fn (mut this.editMovieData.rating) value="target.value")}}
+        />
+
+        <label for="genre">Genre: </label>
+        <input
+          id="genre"
+          type="text"
+          value={{this.editMovieData.genre}}
+          {{on "input" (fn (mut this.editMovieData.genre) value="target.value")}}
+        />
+
+        <label for="releaseYear">Release Year: </label>
+        <input
+          id="releaseYear"
+          type="text"
+          value={{this.editMovieData.releaseYear}}
+          {{on "input" (fn (mut this.editMovieData.releaseYear) value="target.value")}}
+        />
+
+        <button type="submit">Save Changes</button>
+        <button type="button" {{on "click" this.cancelEdit}}>Cancel</button>
+      </form>
+    </section>
+  {{/if}}
+
+  <!-- The AddMovieForm component remains rendered as before -->
   <AddMovieForm @loadMovies={{this.loadMovies}} />
+
 </div>
